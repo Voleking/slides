@@ -1,52 +1,36 @@
-# From https://github.com/kjhealy/pandoc-templates/blob/master/examples/Makefile
-# thanks to Kieran Healy
+.PHONY : all clean debug
 
 ## Markdown extension (e.g. md, markdown, mdown).
 MEXT = md
 
-## 	All markdown files in the working directory
-SRC = $(wildcard *.$(MEXT))
+SRCDIR = srcs
+OBJDIR = objs
 
-## Location of Pandoc support files.
-PREFIX = pandoc_settings
+SRCS = $(wildcard $(SRCDIR)/*.$(MEXT))
+PDFS = $(patsubst %.$(MEXT), ${OBJDIR}/%.pdf, $(notdir ${SRCS}))
+HTML = $(patsubst %.$(MEXT), ${OBJDIR}/%.html, $(notdir ${SRCS}))
+REVEAL = $(patsubst %.$(MEXT), ${OBJDIR}/%.slides.html, $(notdir ${SRCS}))
 
-## Location of your working bibliography file
-BIB = refs.bib
+all:	$(REVEAL)
 
-## CSL stylesheet (located in the csl folder of the PREFIX directory).
-CSL = apsa
+debug:
 
+show:
+	@echo $(SRCS)
+	@echo $(PDFS)
+	@echo $(HTML)
+	@echo $(REVEAL)
 
-PDFS=$(SRC:.md=.pdf)
-HTML=$(SRC:.md=.html)
-REVEAL=$(SRC:.md=.slides.html)
-TEX=$(SRC:.md=.tex)
-
-all:	$(PDFS) $(HTML) $(REVEAL)
-
-pdf:	clean $(PDFS)
-html:	clean $(HTML)
-html:	clean $(REVEAL)
-# tex:	clean $(TEX)
-
-%.html:	%.md
-	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w html -S --template=$(PREFIX)/templates/html.template --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) -o $@ $<
-
-%.slides.html:	%.md
-	pandoc -t revealjs -s --toc-depth=1 --toc --template=$(PREFIX)/templates/revealjs.template --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) -V theme=league -o $@ $<
-
-# %.tex:	%.md
-# 	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w latex -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) -o $@ $<
-
-# %.pdf:	%.md
-# 	pandoc -t beamer -V theme:Warsaw -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --toc-depth=1 --toc --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) -o $@ $<
-
-%.pdf:	%.md
-	pandoc -t beamer -V theme:Warsaw -s --toc-depth=1 --toc --latex-engine=pdflatex --template=$(PREFIX)/templates/beamer.template --filter pandoc-citeproc --csl=$(PREFIX)/csl/$(CSL).csl --bibliography=$(BIB) -o $@ $<
-
+$(OBJDIR)/%.slides.html:	$(SRCDIR)/%.md
+	pandoc -t revealjs -f markdown \
+	--template=pandoc_custom/templates/custom \
+	--include-in-header=pandoc_custom/css/revealjs.css \
+	-V slideNumber=true \
+	-V revealjs-url=../reveal.js \
+	-o $@ $<
 
 clean:
-	rm -f *.html *.pdf *.tex *.slides.html
+	rm -f $(OBJDIR)/*.html $(OBJDIR)/*.pdf $(OBJDIR)/*.slides.html
 
 again:
 	make clean
