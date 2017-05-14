@@ -112,9 +112,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section><section id="a---protecting-the-flowers-greedy" class="titleslide slide level2"><h2>A - Protecting the Flowers (Greedy)</h2></section><section id="a---题意" class="slide level3">
 <h3>A - 题意</h3>
-<ul>
-<li>1A</li>
-</ul>
 <div class="fragment">
 <ul>
 <li>保护祖国的花朵：约翰的奶牛每分钟吃掉<span class="math inline"><em>D</em><sub><em>i</em></sub></span>朵花，把它赶走需要<span class="math inline"><em>T</em><sub><em>i</em></sub></span>分钟（来回加倍）。问最小损失花朵数量。</li>
@@ -141,9 +138,6 @@ printf(<span class="st">&quot;</span><span class="sc">%lld\n</span><span class="
 </section></section>
 <section><section id="b---the-meeting-place-cannot-be-changed-ternary-search" class="titleslide slide level2"><h2>B - The Meeting Place Cannot Be Changed (Ternary Search)</h2></section><section id="b---题意" class="slide level3">
 <h3>B - 题意</h3>
-<ul>
-<li>1A</li>
-</ul>
 <div class="fragment">
 <ul>
 <li>找啊找啊找朋友：南北方向上的路有 <span class="math inline"><em>n</em></span> 个朋友，每个人有一个坐标 <span class="math inline"><em>X</em><sub><em>i</em></sub></span> 和速度 <span class="math inline"><em>V</em><sub><em>i</em></sub></span>，求所有朋友最小会面时间。</li>
@@ -183,9 +177,6 @@ printf(<span class="st">&quot;</span><span class="sc">%lld\n</span><span class="
 </section></section>
 <section><section id="c---chloe-and-pleasant-prizes-dfs" class="titleslide slide level2"><h2>C - Chloe and pleasant prizes (DFS)</h2></section><section id="c---题意" class="slide level3">
 <h3>C - 题意</h3>
-<ul>
-<li>1A</li>
-</ul>
 <div class="fragment">
 <ul>
 <li>给一棵树，求两棵不相交子树的最大和。</li>
@@ -235,14 +226,14 @@ ll dfs(<span class="dt">int</span> v, <span class="dt">int</span> p) {
 </section></section>
 <section><section id="d---ability-to-convert-dp" class="titleslide slide level2"><h2>D - Ability To Convert (DP)</h2></section><section id="d---题意" class="slide level3">
 <h3>D - 题意</h3>
-<ul>
-<li>1A</li>
-</ul>
 <div class="fragment">
 <ul>
 <li>给出n进制和一个对应的数，问最小换成多大的十进制数。(10 直接用 10 代替)</li>
 </ul>
 </div>
+</section><section id="贪心" class="slide level3">
+<h3>贪心</h3>
+<p>从后往前取，每次取最大的不超过 n 的数。</p>
 </section><section id="dp" class="slide level3">
 <h3>DP</h3>
 <p>a[i][j] 表示从 i 开始连续 j 个数是多少， -1 不存在。<br />
@@ -266,9 +257,6 @@ cout &lt;&lt; dp[s.size() - <span class="dv">1</span>] &lt;&lt; endl;</code></pr
 </section></section>
 <section><section id="e---pythagorean-triples-math" class="titleslide slide level2"><h2>E - Pythagorean Triples (Math)</h2></section><section id="e---题意" class="slide level3">
 <h3>E - 题意</h3>
-<ul>
-<li>1A</li>
-</ul>
 <div class="fragment">
 <ul>
 <li>勾股数，知一求二</li>
@@ -296,9 +284,6 @@ cout &lt;&lt; dp[s.size() - <span class="dv">1</span>] &lt;&lt; endl;</code></pr
 </section></section>
 <section><section id="f---teacher-bo-pigeonhole-principle" class="titleslide slide level2"><h2>F - Teacher Bo (Pigeonhole Principle)</h2></section><section id="f---题意" class="slide level3">
 <h3>F - 题意</h3>
-<ul>
-<li>1A</li>
-</ul>
 <div class="fragment">
 <ul>
 <li>n 个点中找两个点对，使得曼哈顿距离相等。</li>
@@ -335,9 +320,6 @@ memset(flag, <span class="dv">0</span>, <span class="kw">sizeof</span> flag);
 </section></section>
 <section><section id="g---problem-buyer-greedy-stl" class="titleslide slide level2"><h2>G - Problem Buyer (Greedy &amp; STL)</h2></section><section id="g---题意" class="slide level3">
 <h3>G - 题意</h3>
-<ul>
-<li>1A</li>
-</ul>
 <div class="fragment">
 <ul>
 <li>有 n 个区间，求至少选多少个，使得给定的 m 个数能对应到任选的区间中，每个数只能对应一个区间。</li>

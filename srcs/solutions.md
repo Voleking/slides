@@ -6,8 +6,6 @@
 
 ### A - 题意
 
-- 1A
-
 . . .
 
 - 保护祖国的花朵：约翰的奶牛每分钟吃掉$D_i$朵花，把它赶走需要$T_i$分钟（来回加倍）。问最小损失花朵数量。
@@ -37,8 +35,6 @@ printf("%lld\n", ans);
 ## B - The Meeting Place Cannot Be Changed (Ternary Search)
 
 ### B - 题意
-
-- 1A 
 
 . . .
 
@@ -83,8 +79,6 @@ int main(int argc, char const *argv[])
 ## C - Chloe and pleasant prizes (DFS)
 
 ### C - 题意
-
-- 1A
 
 . . .
 
@@ -140,11 +134,13 @@ int main(int argc, char const *argv[])
 
 ### D - 题意
 
-- 1A
-
 . . .
 
 - 给出n进制和一个对应的数，问最小换成多大的十进制数。(10 直接用 10 代替)
+
+### 贪心
+
+从后往前取，每次取最大的不超过 n 的数。
 
 ### DP
 
@@ -173,8 +169,6 @@ cout << dp[s.size() - 1] << endl;
 ## E - Pythagorean Triples (Math)
 
 ### E - 题意
-
-- 1A 
 
 . . .
 
@@ -207,8 +201,6 @@ else cout << -1 << endl;
 ## F - Teacher Bo (Pigeonhole Principle)
 
 ### F - 题意
-
-- 1A
 
 . . .
 
@@ -249,8 +241,6 @@ else
 ## G - Problem Buyer (Greedy & STL)
 
 ### G - 题意
-
-- 1A
 
 . . .
 
