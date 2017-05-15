@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--==============================================================================
+	           "GitHub HTML5 Pandoc Template" v1.2 — by Tristano Ajmone           
+	==============================================================================
+	(c) Tristano Ajmone, 2017, MIT License (MIT). Project's home repository:
+
+	- https://github.com/tajmone/pandoc-goodies
+
+	This template reuses source code taken from the following projects:
+
+	- GitHub Markdown CSS: © Sindre Sorhus, MIT License (MIT):
+	  https://github.com/sindresorhus/github-markdown-css
+
+	- Primer CSS: © 2016 GitHub Inc., MIT License (MIT):
+	  http://primercss.io/
+	==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Voleking">
+  <meta name="dcterms.date" content="2017-05-13">
+  <title>积分赛第二场题解</title>
+  <style type="text/css">@font-face{font-family:octicons-link;src:url(data:font/woff;charset=utf-8;base64,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) format('woff')}.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body .octicon{display:inline-block;fill:currentColor;vertical-align:text-bottom}.markdown-body a{background-color:transparent;-webkit-text-decoration-skip:objects;color:#0366d6;text-decoration:none}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body h1{margin:.67em 0}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body code,.markdown-body kbd,.markdown-body pre{font-family:monospace,monospace}.markdown-body input{font:inherit;margin:0;overflow:visible;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body a:hover{text-decoration:underline}.markdown-body strong{font-weight:600}.markdown-body hr{box-sizing:content-box;overflow:hidden;background:0 0;border-bottom:1px solid #dfe2e5}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body table{border-spacing:0;border-collapse:collapse;display:block;width:100%;overflow:auto}.markdown-body td,.markdown-body th{padding:0}.markdown-body blockquote{margin:0}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body dd{margin-left:0}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body .pl-0{padding-left:0!important}.markdown-body .pl-1{padding-left:4px!important}.markdown-body .pl-2{padding-left:8px!important}.markdown-body .pl-3{padding-left:16px!important}.markdown-body .pl-4{padding-left:24px!important}.markdown-body .pl-5{padding-left:32px!important}.markdown-body .pl-6{padding-left:40px!important}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:0}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e1e4e8;border:0}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd{font-size:11px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1{padding-bottom:.3em;font-size:2em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:"\00a0"}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{display:inline-block;padding:3px 5px;font:11px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;line-height:10px;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body hr{border-bottom-color:#eee}.flash{position:relative;padding:16px;color:#246;background-color:#e2eef9;border:1px solid #bac6d3;border-radius:3px}.flash p:last-child{margin-bottom:0}.flash-messages{margin-bottom:24px}.flash-warn{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.flash-error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.flash-success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.flash-plain{color:#4c4a42;background-color:#f5f5f5;border-color:#c1c1c1}</style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="stylesheets/github.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<header>
+<h1 class="title">积分赛第二场题解</h1>
+<p class="author">Voleking</p>
+<p class="date">May 13, 2017</p>
+</header>
+<h2 id="a---protecting-the-flowers-greedy">A - Protecting the Flowers (Greedy)</h2>
+<h3 id="a---题意">A - 题意</h3>
+<div class="incremental">
+<ul>
+<li>保护祖国的花朵：约翰的奶牛每分钟吃掉<span class="math inline"><em>D</em><sub><em>i</em></sub></span>朵花，把它赶走需要<span class="math inline"><em>T</em><sub><em>i</em></sub></span>分钟（来回加倍）。问最小损失花朵数量。</li>
+</ul>
+</div>
+<h3 id="贪心策略">贪心策略</h3>
+<p>尽量先赶走吃得多并且走得慢的牛，如何衡量“多”“慢”？需要两头牛(a, b)作比较：<br />
+a.T * b.D &lt; b.T * a.D</p>
+<h3 id="code">Code</h3>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp">scanf(<span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span>, &amp;N);
+<span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; N; ++i) {
+    scanf(<span class="st">&quot;</span><span class="sc">%d%d</span><span class="st">&quot;</span>, &amp;p[i].second.first, &amp;p[i].second.second);
+    p[i].first = (<span class="dt">double</span>)p[i].second.first / p[i].second.second;
+    sum += p[i].second.second;
+}
+sort(p, p + N);
+<span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; N; ++i) {
+    sum -= p[i].second.second;
+    ans += sum * p[i].second.first * <span class="dv">2</span>;
+}
+printf(<span class="st">&quot;</span><span class="sc">%lld\n</span><span class="st">&quot;</span>, ans);</code></pre></div>
+<h2 id="b---the-meeting-place-cannot-be-changed-ternary-search">B - The Meeting Place Cannot Be Changed (Ternary Search)</h2>
+<h3 id="b---题意">B - 题意</h3>
+<div class="incremental">
+<ul>
+<li>找啊找啊找朋友：南北方向上的路有 <span class="math inline"><em>n</em></span> 个朋友，每个人有一个坐标 <span class="math inline"><em>X</em><sub><em>i</em></sub></span> 和速度 <span class="math inline"><em>V</em><sub><em>i</em></sub></span>，求所有朋友最小会面时间。</li>
+</ul>
+</div>
+<h3 id="三分搜索">三分搜索</h3>
+<p>设坐标 X 为最优面基地点，可以想象 X 1 -&gt; 1e9，所有人到达时间先减小后增大。EPS!!!</p>
+<h3 id="code-1">Code</h3>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">double</span> C(<span class="dt">double</span> x) {
+    <span class="dt">double</span> res = <span class="dv">0</span>;
+    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; N; i++)
+        res = max(abs(X[i] - x) / V[i], res);
+    <span class="cf">return</span> res;
+}
+
+<span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span> <span class="at">const</span> *argv[])
+{
+    scanf(<span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span>, &amp;N);
+    <span class="dt">double</span> lb = <span class="fl">1e9</span>, ub = <span class="dv">1</span>;
+    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; N; i++) {
+        scanf(<span class="st">&quot;</span><span class="sc">%lf</span><span class="st">&quot;</span>, X + i);
+        lb = min(X[i], lb); ub = max(X[i], ub);
+    }
+    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; N; i++)
+        scanf(<span class="st">&quot;</span><span class="sc">%lf</span><span class="st">&quot;</span>, V + i);
+    <span class="cf">while</span> (lb + EPS &lt; ub) {
+        <span class="dt">double</span> ll = (<span class="dv">2</span>. * lb + ub) / <span class="dv">3</span>.;
+        <span class="dt">double</span> rr = (lb + <span class="dv">2</span>. * ub) / <span class="dv">3</span>.;
+        <span class="cf">if</span> (C(ll) &lt;= C(rr)) ub = rr;
+        <span class="cf">else</span> lb = ll;
+    }
+    printf(<span class="st">&quot;</span><span class="sc">%.10f\n</span><span class="st">&quot;</span>, C(lb));
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+<h2 id="c---chloe-and-pleasant-prizes-dfs">C - Chloe and pleasant prizes (DFS)</h2>
+<h3 id="c---题意">C - 题意</h3>
+<div class="incremental">
+<ul>
+<li>给一棵树，求两棵不相交子树的最大和。</li>
+</ul>
+</div>
+<h3 id="dfs">DFS</h3>
+<p>第一遍 DFS，找到每个结点最大和次大子树的值 m[v]，mm[v]； 第二遍 DFS，求出答案。</p>
+<h3 id="code-2">Code</h3>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp">ll cnt(<span class="dt">int</span> v, <span class="dt">int</span> p) {
+    ll res = A[v]; m[v] = INF, mm[v] = INF;
+    <span class="cf">for</span> (<span class="dt">int</span> u : G[v])
+        <span class="cf">if</span> (u != p) {
+            ll tmp = cnt(u, v);
+            res += tmp;
+            tmp = max(tmp, m[u]);
+            <span class="cf">if</span> (tmp &gt; m[v]) {
+                mm[v] = m[v]; m[v] = tmp;
+            } <span class="cf">else</span> <span class="cf">if</span> (tmp &gt; mm[v]) mm[v] = tmp;
+        }
+    <span class="cf">return</span> res;
+}
+ll dfs(<span class="dt">int</span> v, <span class="dt">int</span> p) {
+    ll ans = INF;
+    <span class="cf">for</span> (<span class="dt">int</span> u : G[v])
+        <span class="cf">if</span> (u != p) ans = max(ans, dfs(u, v));
+    <span class="cf">if</span> (m[v] != INF &amp;&amp; mm[v] != INF) ans = max(ans, m[v] + mm[v]);
+    <span class="cf">return</span> ans;
+}
+
+<span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span> <span class="at">const</span> *argv[])
+{
+    scanf(<span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span>, &amp;N);
+    rep(i, <span class="dv">0</span>, N) scanf(<span class="st">&quot;I64d&quot;</span>, A + i);
+    rep(i, <span class="dv">1</span>, N) {
+        scanf(<span class="st">&quot;</span><span class="sc">%d%d</span><span class="st">&quot;</span>, &amp;u, &amp;v); --u, --v;
+        G[u].push_back(v);
+        G[v].push_back(u);
+    }
+    cnt(<span class="dv">0</span>, <span class="dv">-1</span>);
+    ll ans = dfs(<span class="dv">0</span>, <span class="dv">-1</span>);
+    <span class="cf">if</span> (ans == INF) printf(<span class="st">&quot;Impossible</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    <span class="cf">else</span> cout &lt;&lt; ans &lt;&lt; endl;
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+<h2 id="d---ability-to-convert-dp">D - Ability To Convert (DP)</h2>
+<h3 id="d---题意">D - 题意</h3>
+<div class="incremental">
+<ul>
+<li>给出n进制和一个对应的数，问最小换成多大的十进制数。(10 直接用 10 代替)</li>
+</ul>
+</div>
+<h3 id="贪心">贪心</h3>
+<p>从后往前取，每次取最大的不超过 n 的数。</p>
+<h3 id="dp">DP</h3>
+<p>a[i][j] 表示从 i 开始连续 j 个数是多少， -1 不存在。<br />
+dp[i] 表示前 i 个数最小能换成多大的十进制数。</p>
+<h3 id="code-3">Code</h3>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp">cin &gt;&gt; n &gt;&gt; s;
+memset(a, <span class="dv">-1</span>, <span class="kw">sizeof</span> a);
+<span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">60</span>; i++) dp[i] = INF;
+<span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; s.size(); i++) {
+    a[i][<span class="dv">1</span>] = s[i] - <span class="st">&#39;0&#39;</span>;
+    <span class="cf">if</span> (i) <span class="cf">for</span> (<span class="dt">int</span> j = <span class="dv">2</span>; j &lt; <span class="dv">10</span>; j++)
+            <span class="cf">if</span> (a[i - <span class="dv">1</span>][j - <span class="dv">1</span>] &gt; <span class="dv">0</span>) a[i][j] = a[i - <span class="dv">1</span>][j - <span class="dv">1</span>] * <span class="dv">10</span> + a[i][<span class="dv">1</span>];
+    <span class="cf">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt; <span class="dv">10</span>; j++)
+        <span class="cf">if</span> (a[i][j] != <span class="dv">-1</span> &amp;&amp; a[i][j] &lt; n) {
+            <span class="cf">if</span> (j == i + <span class="dv">1</span>) dp[i] = a[i][j];
+            <span class="cf">else</span> <span class="cf">if</span> (dp[i - j] &lt;= INF / n) dp[i] = min(dp[i], dp[i - j] * n + a[i][j]);
+        }
+}
+cout &lt;&lt; dp[s.size() - <span class="dv">1</span>] &lt;&lt; endl;</code></pre></div>
+<h2 id="e---pythagorean-triples-math">E - Pythagorean Triples (Math)</h2>
+<h3 id="e---题意">E - 题意</h3>
+<div class="incremental">
+<ul>
+<li>勾股数，知一求二</li>
+</ul>
+</div>
+<h3 id="数学构造">数学，构造</h3>
+<p><br /><span class="math display">(<em>n</em> + 1)<sup>2</sup> − <em>n</em><sup>2</sup> = 2<em>n</em> + 1</span><br /></p>
+<p><br /><span class="math display">(<em>n</em><sup>2</sup> + 1)<sup>2</sup> − (<em>n</em><sup>2</sup> − 1)<sup>2</sup> = 2 * (2 * <em>n</em><sup>2</sup>)=(2<em>n</em>)<sup>2</sup></span><br /></p>
+<h3 id="code-4">Code</h3>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp">cin &gt;&gt; a;
+<span class="cf">if</span> (a % <span class="dv">2</span> == <span class="dv">1</span>) {
+    ll n = a / <span class="dv">2</span>;
+    b = <span class="dv">2LL</span> * n * (n + <span class="dv">1</span>);
+    c = <span class="dv">2LL</span> * n * (n + <span class="dv">1</span>) + <span class="dv">1</span>;
+} <span class="cf">else</span> {
+    ll n = a / <span class="dv">2</span>;
+    b = n * n - <span class="dv">1</span>;
+    c = n * n + <span class="dv">1</span>;
+}
+<span class="cf">if</span> (b &amp;&amp; c)
+    cout &lt;&lt; b &lt;&lt; <span class="st">&quot; &quot;</span> &lt;&lt; c &lt;&lt; endl;
+<span class="cf">else</span> cout &lt;&lt; <span class="dv">-1</span> &lt;&lt; endl;</code></pre></div>
+<h2 id="f---teacher-bo-pigeonhole-principle">F - Teacher Bo (Pigeonhole Principle)</h2>
+<h3 id="f---题意">F - 题意</h3>
+<div class="incremental">
+<ul>
+<li>n 个点中找两个点对，使得曼哈顿距离相等。</li>
+</ul>
+</div>
+<h3 id="抽屉原理">抽屉原理</h3>
+<p>坐标的范围为<span class="math inline">10<sup>5</sup></span>，曼哈顿距离为<span class="math inline">2 * 10<sup>5</sup></span>，暴力枚举。</p>
+<h3 id="code-5">Code</h3>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp">cin &gt;&gt; N &gt;&gt; M;
+<span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; N; ++i) {
+    scanf(<span class="st">&quot;</span><span class="sc">%d%d</span><span class="st">&quot;</span>, &amp;X[i], &amp;Y[i]);
+}
+<span class="cf">if</span> (N * (N - <span class="dv">1</span>) &gt; <span class="dv">4</span> * M - <span class="dv">2</span>) {
+    printf(<span class="st">&quot;YES</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    <span class="cf">continue</span>;
+}
+memset(flag, <span class="dv">0</span>, <span class="kw">sizeof</span> flag);
+<span class="dt">bool</span> ok = <span class="kw">false</span>;
+<span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; N &amp;&amp; !ok; ++i)
+    <span class="cf">for</span> (<span class="dt">int</span> j = i + <span class="dv">1</span>; j &lt; N &amp;&amp; !ok; ++j) {
+        <span class="dt">int</span> dis = abs(X[j] - X[i]) + abs(Y[j] - Y[i]);
+        ++flag[dis];
+        <span class="cf">if</span> (flag[dis] &gt;= <span class="dv">2</span>) {
+            ok = <span class="kw">true</span>;
+            <span class="cf">break</span>;
+        }
+    }
+<span class="cf">if</span> (ok)
+    printf(<span class="st">&quot;YES</span><span class="sc">\n</span><span class="st">&quot;</span>);
+<span class="cf">else</span>
+    printf(<span class="st">&quot;NO</span><span class="sc">\n</span><span class="st">&quot;</span>);</code></pre></div>
+<h2 id="g---problem-buyer-greedy-stl">G - Problem Buyer (Greedy &amp; STL)</h2>
+<h3 id="g---题意">G - 题意</h3>
+<div class="incremental">
+<ul>
+<li>有 n 个区间，求至少选多少个，使得给定的 m 个数能对应到任选的区间中，每个数只能对应一个区间。</li>
+</ul>
+</div>
+<h3 id="xjb">xjb</h3>
+<p>先考虑只有一个数的情况，假设有 a 个区间不能与之匹配，则至少要选择 a + 1 个区间。 再考虑两个数的情况，假设分别有 a，b 个区间不能与这两个数匹配，则至少要选则 max(a,b) + 1 个。 如果有两个数不能匹配区间都一致时（或两个数相等），显然有 a=b，则要选 a + 2 个。</p>
+<h3 id="code-6">Code</h3>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp">scanf(<span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span>, &amp;t);
+<span class="cf">for</span> (<span class="dt">int</span> _ = <span class="dv">0</span>; _ &lt; t; _++) {
+    scanf(<span class="st">&quot;</span><span class="sc">%d%d</span><span class="st">&quot;</span>, &amp;n, &amp;m);
+    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++)
+        scanf(<span class="st">&quot;</span><span class="sc">%d%d</span><span class="st">&quot;</span>, &amp;seg[i].first, &amp;seg[i].second);
+    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; m; i++)
+        scanf(<span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span>, C + i);
+    sort(seg, seg + n);
+    sort(C, C + m);
+    <span class="dt">int</span> ans = <span class="dv">0</span>;
+    priority_queue&lt;<span class="dt">int</span>, vector&lt;<span class="dt">int</span>&gt;, greater&lt;<span class="dt">int</span>&gt; &gt; que;
+    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>, it = <span class="dv">0</span>; i &lt; m; i++) {
+        <span class="cf">while</span> (it &lt; n &amp;&amp; seg[it].first &lt;= C[i]) que.push(seg[it++].second);
+        <span class="cf">while</span> (!que.empty() &amp;&amp; que.top() &lt; C[i]) que.pop();
+        <span class="cf">if</span> (que.size() == <span class="dv">0</span>) {ans = <span class="dv">-1</span>; <span class="cf">break</span>;}
+        ans = max(ans, n - (<span class="dt">int</span>)que.size());
+        que.pop();
+    }
+    <span class="cf">if</span> (~ans) printf(<span class="st">&quot;Case #</span><span class="sc">%d</span><span class="st">: </span><span class="sc">%d\n</span><span class="st">&quot;</span>, _ + <span class="dv">1</span>, ans + <span class="dv">1</span>);
+    <span class="cf">else</span> printf(<span class="st">&quot;Case #</span><span class="sc">%d</span><span class="st">: IMPOSSIBLE!</span><span class="sc">\n</span><span class="st">&quot;</span>, _ + <span class="dv">1</span>);
+}</code></pre></div>
+<h2 id="thx">Thx</h2>
+</article>
+</body>
+</html>

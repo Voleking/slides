@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<!--==============================================================================
+	           "GitHub HTML5 Pandoc Template" v1.2 — by Tristano Ajmone           
+	==============================================================================
+	(c) Tristano Ajmone, 2017, MIT License (MIT). Project's home repository:
+
+	- https://github.com/tajmone/pandoc-goodies
+
+	This template reuses source code taken from the following projects:
+
+	- GitHub Markdown CSS: © Sindre Sorhus, MIT License (MIT):
+	  https://github.com/sindresorhus/github-markdown-css
+
+	- Primer CSS: © 2016 GitHub Inc., MIT License (MIT):
+	  http://primercss.io/
+	==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Christian Groll">
+  <title>markdown, pandoc and make</title>
+  <style type="text/css">@font-face{font-family:octicons-link;src:url(data:font/woff;charset=utf-8;base64,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) format('woff')}.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body .octicon{display:inline-block;fill:currentColor;vertical-align:text-bottom}.markdown-body a{background-color:transparent;-webkit-text-decoration-skip:objects;color:#0366d6;text-decoration:none}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body h1{margin:.67em 0}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body code,.markdown-body kbd,.markdown-body pre{font-family:monospace,monospace}.markdown-body input{font:inherit;margin:0;overflow:visible;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body a:hover{text-decoration:underline}.markdown-body strong{font-weight:600}.markdown-body hr{box-sizing:content-box;overflow:hidden;background:0 0;border-bottom:1px solid #dfe2e5}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body table{border-spacing:0;border-collapse:collapse;display:block;width:100%;overflow:auto}.markdown-body td,.markdown-body th{padding:0}.markdown-body blockquote{margin:0}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body dd{margin-left:0}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body .pl-0{padding-left:0!important}.markdown-body .pl-1{padding-left:4px!important}.markdown-body .pl-2{padding-left:8px!important}.markdown-body .pl-3{padding-left:16px!important}.markdown-body .pl-4{padding-left:24px!important}.markdown-body .pl-5{padding-left:32px!important}.markdown-body .pl-6{padding-left:40px!important}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:0}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e1e4e8;border:0}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd{font-size:11px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1{padding-bottom:.3em;font-size:2em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:"\00a0"}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{display:inline-block;padding:3px 5px;font:11px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;line-height:10px;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body hr{border-bottom-color:#eee}.flash{position:relative;padding:16px;color:#246;background-color:#e2eef9;border:1px solid #bac6d3;border-radius:3px}.flash p:last-child{margin-bottom:0}.flash-messages{margin-bottom:24px}.flash-warn{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.flash-error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.flash-success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.flash-plain{color:#4c4a42;background-color:#f5f5f5;border-color:#c1c1c1}</style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="stylesheets/github.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<header>
+<h1 class="title">markdown, pandoc and make</h1>
+<p class="author">Christian Groll</p>
+</header>
+<h1 id="markdown"><a href="http://daringfireball.net/projects/markdown/">Markdown</a></h1>
+<h2 id="headers">Headers</h2>
+<pre><code>
+# New section
+
+## New slides</code></pre>
+<h2 id="lists">Lists</h2>
+<pre><code>
+* Candy.
+* Gum.
+* Booze.
+  
+- Candy.
+- Gum.
+- Booze.</code></pre>
+<ul>
+<li>Candy.</li>
+<li>Gum.</li>
+<li>Booze.</li>
+</ul>
+<h2 id="section"></h2>
+<pre><code>
+1. Red
+2. Green
+3. Blue</code></pre>
+<ol type="1">
+<li>Red</li>
+<li>Green</li>
+<li>Blue</li>
+</ol>
+<h2 id="links">Links</h2>
+<pre><code>
+This link points to [Google](http://www.google.de).</code></pre>
+<p>This link points to <a href="http://www.google.de">Google</a>.</p>
+<h2 id="emphasis">Emphasis</h2>
+<pre><code>
+- normal text
+- *single asterisks*
+- **double asterisks**</code></pre>
+<ul>
+<li>normal text</li>
+<li><em>single asterisks</em></li>
+<li><strong>double asterisks</strong></li>
+</ul>
+<h2 id="code-blocks">Code blocks</h2>
+<ul>
+<li>indicated by <strong>backticks</strong> or <strong>indentation</strong></li>
+</ul>
+<div class="incremental">
+<pre><code>        ````
+function addTwo(x)
+return x+2
+end
+````</code></pre>
+<pre><code>        function addTwo(x)
+return x+2
+end</code></pre>
+</div>
+<h1 id="pandoc"><a href="http://johnmacfarlane.net/pandoc/">pandoc</a></h1>
+<h2 id="section-1"></h2>
+<p><a href="http://www.pandoc.org">pandoc.org</a>:</p>
+<blockquote>
+<p>“If you need to convert files from one markup format into another, pandoc is your swiss-army knife.”</p>
+</blockquote>
+<h2 id="section-2"></h2>
+<p>What for?</p>
+<ul>
+<li>enable <strong>markdown usage</strong></li>
+</ul>
+<div class="incremental">
+<ul>
+<li><strong>multiple output formats</strong> for single content file</li>
+</ul>
+</div>
+<h2 id="installation">Installation</h2>
+<p>On windows:</p>
+<ul>
+<li><a href="https://youtu.be/N9zVyggYeyU">Video: Pandoc installation, windows</a></li>
+</ul>
+<div class="incremental">
+<p>On Linux:</p>
+<ul>
+<li>download debian package provided on homepage</li>
+</ul>
+</div>
+<h1 id="example-reveal.js-slides">Example: <a href="https://github.com/hakimel/reveal.js/">Reveal.js</a> slides</h1>
+<h2 id="download-reveal.js">Download reveal.js</h2>
+<p>In project directory:</p>
+<pre><code>git clone https://github.com/hakimel/reveal.js.git</code></pre>
+<h2 id="section-3"></h2>
+<p>Starting small:</p>
+<ul>
+<li>input and output <strong>formats</strong></li>
+<li>input and output <strong>files</strong></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="ex">pandoc</span> -t revealjs -f markdown \
+-o output/content.slides.html src/content.md</code></pre></div>
+<h2 id="section-4"></h2>
+<p>Add <strong><code>-s</code></strong> option for <strong>standalone</strong> html file:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="ex">pandoc</span> -s -t revealjs -f markdown \
+-o output/content.slides.html src/content.md</code></pre></div>
+<h2 id="section-5"></h2>
+<ul>
+<li>inspect html source in browser: <code>Inspect element</code></li>
+</ul>
+<div class="incremental">
+<ul>
+<li>adapt <strong>reveal.js path</strong> variable</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="ex">pandoc</span> -s -V revealjs-url=../reveal.js -t revealjs \
+-f markdown -o output/content.slides.html src/content.md</code></pre></div>
+</div>
+<h2 id="section-6"></h2>
+<ul>
+<li>at some point file <strong>paths</strong> were <strong>out of sync</strong> between latest reveal.js version and pandoc version</li>
+</ul>
+<div class="incremental">
+<ul>
+<li>pandoc requires <code>reveal.min.js</code> and <code>reveal.min.css</code></li>
+</ul>
+</div>
+<div class="incremental">
+<ul>
+<li>first solution: create symbolic links</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="bu">cd</span> reveal.js/js
+<span class="fu">ln</span> -s reveal.js reveal.min.js 
+<span class="bu">cd</span> ../css
+<span class="fu">ln</span> -s reveal.css reveal.min.css </code></pre></div>
+</div>
+<h1 id="excursion-pandoc-details">Excursion: pandoc details</h1>
+<h2 id="section-7"></h2>
+<ul>
+<li>how is output file created?</li>
+</ul>
+<div class="incremental">
+<ul>
+<li>how are command line <strong>arguments</strong> included?</li>
+</ul>
+</div>
+<div class="incremental">
+<p><a href="https://github.com/jgm/pandoc-templates">pandoc-templates</a></p>
+<p><a href="https://github.com/jgm/pandoc-templates/blob/master/default.revealjs">default.revealjs</a></p>
+</div>
+<h2 id="section-8"></h2>
+<p>Better solution for setting paths:</p>
+<ul>
+<li><p>use customized pandoc <a href="https://github.com/cgroll/pandoc_custom">template files</a></p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="fu">git</span> clone https://github.com/cgroll/pandoc_custom.git</code></pre></div></li>
+</ul>
+<div class="incremental">
+<ul>
+<li><p>or as <strong>git subtree</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="fu">git</span> subtree add --prefix pandoc_custom \
+https://github.com/cgroll/pandoc_custom.git master --squash</code></pre></div></li>
+</ul>
+</div>
+<h2 id="section-9"></h2>
+<ul>
+<li>set reveal.js <strong>path</strong> in <strong>template</strong> according to your needs</li>
+</ul>
+<div class="incremental">
+<ul>
+<li><strong>point to</strong> customized pandoc settings during call</li>
+</ul>
+<pre><code>    pandoc --template=pandoc_custom/templates/revealjs.template \
+-s -V revealjs-url=../reveal.js -t revealjs -f markdown \
+-o output/content.slides.html src/content.md</code></pre>
+</div>
+<h2 id="mathjax"><a href="http://www.mathjax.org/">MathJax</a></h2>
+<ul>
+<li>rendering mathematical formulas:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">
+<span class="ss">$$</span>
+<span class="sc">\gamma</span><span class="ss">(n)=</span><span class="sc">\sum</span><span class="ss">_{i=1}^{n}x^{2}</span>
+<span class="ss">$$</span></code></pre></div>
+<div class="incremental">
+<ul>
+<li>clone from github:</li>
+</ul>
+<pre><code>git clone https://github.com/mathjax/MathJax.git</code></pre>
+</div>
+<div class="incremental">
+<p><span class="math inline">⇒</span> configure <code>MathJax</code> to correctly render formulas</p>
+</div>
+<h2 id="section-10"></h2>
+<ul>
+<li>include <strong>MathJax</strong> code in reveal.js <strong>template</strong>:</li>
+</ul>
+<pre><code>        &lt;!-- include local MathJax --&gt;
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+MathJax.Hub.Config({
+&quot;HTML-CSS&quot;: {
+scale: 80,
+},
+extensions: [&quot;tex2jax.js&quot;],
+TeX: { equationNumbers: { autoNumber: &quot;AMS&quot; } },
+jax: [&quot;input/TeX&quot;,&quot;output/HTML-CSS&quot;],
+tex2jax: {inlineMath: [[&quot;$$&quot;,&quot;$$&quot;],[&quot;\\(&quot;,&quot;\\)&quot;]]}});
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../MathJax/MathJax.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<div class="incremental">
+<p><span class="math inline">⇒</span> set MathJax path according to your needs!</p>
+</div>
+<h2 id="mathjax-rendered">MathJax rendered</h2>
+<ul>
+<li>equation without number</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="ss">$$</span><span class="sc">\alpha</span><span class="ss">^{2} = </span><span class="sc">\beta</span><span class="ss">^{2}$$</span></code></pre></div>
+<p><br /><span class="math display"><em>α</em><sup>2</sup> = <em>β</em><sup>2</sup></span><br /></p>
+<h2 id="section-11"></h2>
+<ul>
+<li>using latex equation environment currently requires <strong>different syntax</strong> for <code>html</code> and <code>pdf</code> output</li>
+</ul>
+<div class="incremental">
+<ul>
+<li><p>labeled and numbered equation, <strong>html</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">
+<span class="ss">$$</span><span class="er">\begin{equation}</span>
+<span class="sc">\alpha</span><span class="ss"> = </span><span class="sc">\beta</span>
+<span class="sc">\label</span><span class="ss">{eq:sample}</span>
+<span class="er">\end{equation}</span><span class="ss">$$</span></code></pre></div></li>
+</ul>
+</div>
+<div class="incremental">
+<ul>
+<li><p>same formula for <strong>pdf</strong> output:</p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">
+<span class="kw">\begin</span>{<span class="ex">equation</span>}
+<span class="sc">\alpha</span><span class="ss"> = </span><span class="sc">\beta</span>
+<span class="sc">\label</span><span class="ss">{eq:sample}</span>
+<span class="kw">\end</span>{<span class="ex">equation</span>}</code></pre></div></li>
+</ul>
+</div>
+<h2 id="pandoc-core">pandoc <strong>core</strong></h2>
+<ul>
+<li>both options are parsed differently</li>
+</ul>
+<div class="incremental">
+<ul>
+<li>to get <strong>parsed contents</strong>, export to <strong>native</strong> format</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="ex">pandoc</span> -t native src/content.md -o output/content_native.txt</code></pre></div>
+</div>
+<h2 id="section-12"></h2>
+<ul>
+<li>the equations will appear as</li>
+</ul>
+<pre><code>
+,Para [Math DisplayMath &quot;\\begin{equation}\n\\alpha = \\beta\n\\label{eq:sample}\n\\end{equation}&quot;]
+,RawBlock (Format &quot;latex&quot;) &quot;\\begin{equation}\n\\alpha = \\beta\n\\label{eq:sample}\n\\end{equation}&quot;</code></pre>
+<div class="incremental">
+<ul>
+<li>using <strong>–filter</strong> option allows <strong>pre-processing</strong> of the parsed document</li>
+</ul>
+</div>
+<div class="incremental">
+<p><span class="math inline">⇒</span> <strong>convert</strong> RawBlock to Math DisplayMath for <strong>html</strong> output</p>
+</div>
+<h2 id="section-13"></h2>
+<ul>
+<li><strong>amsmath.hs</strong> filter allows raw latex syntax for html</li>
+</ul>
+<pre><code>pandoc --template=pandoc_custom/templates/revealjs.template \
+-s -V revealjs-url=../reveal.js -t revealjs -f markdown \
+--filter pandoc_custom/filters/amsmath.hs \
+-o output/content.slides.html src/content.md</code></pre>
+<div class="incremental">
+<p><span class="math inline">⇒</span> writing equations without $$</p>
+</div>
+<h2 id="section-14"></h2>
+<ul>
+<li>labeled and numbered equation:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">
+<span class="kw">\begin</span>{<span class="ex">equation</span>}
+<span class="sc">\alpha</span><span class="ss"> = </span><span class="sc">\beta</span>
+<span class="sc">\label</span><span class="ss">{eq:sample}</span>
+<span class="kw">\end</span>{<span class="ex">equation</span>}</code></pre></div>
+
+<h2 id="section-15"></h2>
+<ul>
+<li>labeled aligned equations, single number:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">
+<span class="kw">\begin</span>{<span class="ex">equation</span>}
+<span class="kw">\begin</span>{<span class="ex">split</span>}<span class="ss"> </span>
+<span class="sc">\gamma</span><span class="ss">(n)&amp;=</span><span class="sc">\sum</span><span class="ss">_{i=1}^{n}x^{2}</span><span class="sc">\\</span>
+<span class="ss">&amp;=</span><span class="sc">\sum</span><span class="ss">_{i=1}^{n}x</span><span class="sc">\cdot</span><span class="ss"> x</span>
+<span class="kw">\end</span>{<span class="ss">split}</span>
+<span class="sc">\label</span><span class="ss">{eq:splitSample}</span>
+<span class="kw">\end</span>{<span class="ex">equation</span>}</code></pre></div>
+
+<h2 id="section-16"></h2>
+<ul>
+<li>aligned equations, one number per line, single label</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">
+<span class="kw">\begin</span>{<span class="ex">align</span>}
+<span class="sc">\gamma</span><span class="ss">(n)&amp;=</span><span class="sc">\sum</span><span class="ss">_{i=1}^{n}x^{2}</span><span class="sc">\\</span>
+<span class="ss">&amp;=</span><span class="sc">\sum</span><span class="ss">_{i=1}^{n}x</span><span class="sc">\cdot</span><span class="ss"> x</span>
+<span class="sc">\label</span><span class="ss">{eq:alignedSample}</span>
+<span class="kw">\end</span>{<span class="ex">align</span>}</code></pre></div>
+
+<h2 id="section-17"></h2>
+<ul>
+<li><strong>referring</strong> to equations in text</li>
+</ul>
+<pre><code>
+Referring to equations $\eqref{eq:sample}$, $\eqref{eq:splitSample}$
+and $\eqref{eq:alignedSample}$.</code></pre>
+<p>Referring to equations <span class="math inline">$\eqref{eq:sample}$</span>, <span class="math inline">$\eqref{eq:splitSample}$</span> and <span class="math inline">$\eqref{eq:alignedSample}$</span>.</p>
+<h2 id="debugging">debugging</h2>
+<ul>
+<li>especially for latex, <strong>errors</strong> can be hard to find</li>
+</ul>
+<div class="incremental">
+<ul>
+<li>it might help to look at the <strong>raw</strong> produced <strong><code>tex</code> file</strong></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="ex">pandoc</span> -t latex -f markdown -s -o output/content.tex</code></pre></div>
+</div>
+<h2 id="todo">TODO</h2>
+<p>Theorem environments: <a href="https://github.com/aphorisme/AphoFilters/blob/master/src/Text/Pandoc/AphoFilters/MathThm.hs">AphoFilters</a></p>
+<h1 id="citations-csl">Citations: CSL</h1>
+<h2 id="section-18"></h2>
+<ul>
+<li><a href="http://hackage.haskell.org/package/pandoc-citeproc">pandoc-citeproc</a>:</li>
+</ul>
+<blockquote>
+<p>“a library for rendering bibliographic reference citations into a variety of styles using a macro language called Citation Style Language (CSL)”</p>
+</blockquote>
+<h2 id="section-19"></h2>
+<ul>
+<li>Linux <strong>installation</strong>, if not already included by pandoc:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="fu">sudo</span> apt-get install pandoc-citeproc</code></pre></div>
+<h2 id="section-20"></h2>
+<ul>
+<li>keep list of references in <strong>bibtex</strong> format</li>
+</ul>
+<pre><code>@article{citeulike:1232469,
+author = {Rubinstein, Mark},
+citeulike-article-id = {1232469},
+citeulike-linkout-0 = {http://www.jstor.org/stable/2697771},
+journal = {The Journal of Finance},
+number = {3},
+pages = {1041--1045},
+posted-at = {2007-04-17 17:49:48},
+priority = {0},
+title = {{Markowitz&#39;s \&quot;Portfolio Selection\&quot;;: A Fifty-Year Retrospective}},
+url = {http://www.jstor.org/stable/2697771},
+volume = {57},
+year = {2002}
+}</code></pre>
+<h2 id="section-21"></h2>
+<ul>
+<li>meanwhile bibtex entries for most references are readily available</li>
+</ul>
+<div class="incremental">
+<ul>
+<li>simply google for reference + bibtex</li>
+</ul>
+</div>
+<div class="incremental">
+<ul>
+<li><strong>export bibtex</strong> from <a href="http://www.citeulike.org/user/felixroudier/author/Rubinstein">page</a></li>
+</ul>
+</div>
+<h2 id="citation-style-language"><a href="http://citationstyles.org/">Citation Style Language</a></h2>
+<ul>
+<li>define <strong>style</strong> of references and bibliography in <strong>.csl</strong> file</li>
+</ul>
+<div class="incremental">
+<ul>
+<li>find appropriate style: <a href="http://editor.citationstyles.org/about/">search citation styles</a></li>
+</ul>
+</div>
+<h2 id="section-22"></h2>
+<ul>
+<li><strong>pre-process</strong> citations through <strong>filter</strong></li>
+</ul>
+<pre><code>
+pandoc --template=pandoc_custom/templates/revealjs.template \
+-s -V revealjs-url=../reveal.js -t revealjs -f markdown \
+--filter pandoc-citeproc --csl=pandoc_custom/csl/elsevier-harvard.csl \
+--bibliography=refs.bib \
+-o output/content.slides.html src/content.md</code></pre>
+<h2 id="section-23"></h2>
+<ul>
+<li>cite reference:</li>
+</ul>
+<p><code>... according to [@citeulike:1232469].</code></p>
+<div class="incremental">
+<p><strong>Output</strong>: … according to <span class="citation" data-cites="citeulike:1232469">[@citeulike:1232469]</span>.</p>
+</div>
+<div class="incremental">
+<ul>
+<li>references will appear automatically in bibliography at the end</li>
+</ul>
+</div>
+<h2 id="internal-links">Internal links</h2>
+<ul>
+<li>link to section</li>
+</ul>
+<pre><code>
+Still remember [the pandoc introduction](#pandoc)?</code></pre>
+<div class="incremental">
+<p><strong>Output</strong>: Still remember <a href="#pandoc">the pandoc introduction</a>?</p>
+</div>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="http://johnmacfarlane.net/BayHac2014/#/">John MacFarlane, slides</a></li>
+<li><p><a href="https://youtu.be/6TBpB-BEiIg">John MacFarlane, video</a></p></li>
+<li><p><a href="https://youtu.be/idD5pNAXL3s">Video: markdown to html slides using pandoc</a></p></li>
+</ul>
+<h2 id="pandoc-alternatives">Pandoc alternatives</h2>
+<p>You could also circumvent raw LaTeX with:</p>
+<ul>
+<li><a href="www.lyx.org">LyX</a></li>
+<li><a href="http://orgmode.org/">emacs org-mode</a></li>
+</ul>
+<h1 id="make"><a href="http://www.gnu.org/software/make/">Make</a></h1>
+<h2 id="automation">Automation</h2>
+<ul>
+<li>using command line allows for easy <strong>automation</strong> of <strong>repetitive tasks</strong></li>
+<li>GUIs and mouse clicks are a lot less easy to automate</li>
+</ul>
+<h2 id="section-24"></h2>
+<p>Starting small</p>
+<ul>
+<li><p><strong>bash script</strong>: create file <code>export.sh</code> with content</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="ex">pandoc</span> --template=pandoc_custom/templates/revealjs.template \
+-s -V revealjs-url=../reveal.js -t revealjs -f markdown \
+--filter pandoc-citeproc --csl=pandoc_custom/csl/elsevier-harvard.csl <span class="dt">\ </span>  
+<span class="ex">--bibliography</span>=refs.bib \
+-o output/content.slides.html src/content.md</code></pre></div></li>
+</ul>
+<div class="incremental">
+<ul>
+<li><p>call script with</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">sh</span> export.sh   </code></pre></div></li>
+</ul>
+</div>
+<h2 id="section-25"></h2>
+<p>Wishful improvements:</p>
+<ul>
+<li>only execute command, <strong>if</strong> source file was <strong>modified</strong></li>
+</ul>
+<div class="incremental">
+<ul>
+<li>subsume multiple commands with <strong>pattern rules</strong></li>
+</ul>
+</div>
+<div class="incremental">
+<p><span class="math inline">⇒</span> use a <code>Makefile</code></p>
+</div>
+<h2 id="section-26"></h2>
+<ul>
+<li>specify <strong>target files</strong> together with <strong>dependencies</strong></li>
+</ul>
+<div class="incremental">
+<p><strong>conditional execution</strong>: command is executed, if</p>
+</div>
+<div class="incremental">
+<ul>
+<li>target file does not exist</li>
+</ul>
+</div>
+<div class="incremental">
+<ul>
+<li>timestamp of last modification of dependency is more recent than last modification of target file</li>
+</ul>
+</div>
+<h2 id="section-27"></h2>
+<ul>
+<li>create file called <strong>Makefile</strong></li>
+</ul>
+<div class="incremental">
+<ul>
+<li><p>syntax:</p>
+<pre class="make"><code>target: dependency1 dependency2
+target rule</code></pre></li>
+</ul>
+</div>
+<div class="incremental">
+<ul>
+<li>important: line with target rule MUST start with <strong>TAB</strong></li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<p>pandoc slide creation:</p>
+<div class="incremental">
+<ul>
+<li><strong>target</strong>: <em>output/content.slides.html</em></li>
+</ul>
+</div>
+<div class="incremental">
+<ul>
+<li><strong>dependencies</strong>: <em>src/content.md</em>, <em>Makefile</em> and <em>refs.bib</em></li>
+</ul>
+</div>
+<div class="incremental">
+<pre class="make"><code>output/content.slides.html: src/content.md Makefile refs.bib
+pandoc --template=pandoc_custom/templates/revealjs.template \
+-s -V revealjs-url=../reveal.js -t revealjs -f markdown \
+--filter pandoc-citeproc --csl=pandoc_custom/csl/elsevier-harvard.csl \
+--bibliography=refs.bib \
+-o output/content.slides.html src/content.md</code></pre>
+</div>
+<h2 id="build-targets">Build targets</h2>
+<ul>
+<li><p>you can build <strong>individual targets</strong> by calling <code>Make</code> on them:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">
+<span class="fu">make</span> output/content.slides.html</code></pre></div></li>
+</ul>
+<div class="incremental">
+<ul>
+<li>if no argument is specified, <code>Make</code> automatically builds the <strong>first target</strong> appearing in a <code>Makefile</code></li>
+</ul>
+</div>
+<h2 id="section-28"></h2>
+<ul>
+<li>additional <strong>pdf</strong> output target:</li>
+</ul>
+<pre class="make"><code>output/content.pdf: src/content.md Makefile refs.bib
+pandoc -s -t beamer -f markdown \
+--slide-level=2 \
+-V theme=CambridgeUS -V colortheme=dolphin \
+-V header-includes=\\hypersetup{colorlinks\=true} \
+-V header-includes=\\hypersetup{urlcolor\=blue} \
+-V header-includes=\\hypersetup{linkcolor\=blue} \
+-V header-includes=\\usepackage{hyperref} \
+-V urlcolor=blue \
+-V linkcolor=blue \
+--mathjax \
+--filter pandoc_custom/filters/skip_pause.hs \
+--filter pandoc-citeproc --csl=pandoc_custom/csl/elsevier-harvard.csl \
+--bibliography=refs.bib \
+-o output/content.pdf src/content.md</code></pre>
+<h2 id="automatic-variables"><a href="http://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html">Automatic variables</a></h2>
+<ul>
+<li>targets and dependencies are frequently referenced in make rule</li>
+</ul>
+<div class="incremental">
+<p><span class="math inline">⇒</span> shortcuts: <strong>automatic variables</strong></p>
+</div>
+<div class="incremental">
+<ul>
+<li><code>$@</code> represents target</li>
+</ul>
+</div>
+<div class="incremental">
+<ul>
+<li><code>$&lt;</code> represents first dependency</li>
+</ul>
+</div>
+<h2 id="example-1">Example</h2>
+<pre><code>output/content.pdf: src/content.md Makefile refs.bib
+pandoc -s -t beamer -f markdown \
+--slide-level=2 \
+-V theme=CambridgeUS -V colortheme=dolphin \
+-V header-includes=\\hypersetup{colorlinks\=true} \
+-V header-includes=\\hypersetup{urlcolor\=blue} \
+-V header-includes=\\hypersetup{linkcolor\=blue} \
+-V header-includes=\\usepackage{hyperref} \
+-V urlcolor=blue \
+-V linkcolor=blue \
+--mathjax \
+--filter pandoc_custom/filters/skip_pause.hs \
+--filter pandoc-citeproc --csl=pandoc_custom/csl/elsevier-harvard.csl \
+--bibliography=refs.bib \
+-o $@ $&lt;</code></pre>
+<h2 id="dummy-targets">Dummy targets</h2>
+<ul>
+<li>to subsume multiple targets create <strong>dummy target</strong> that will never be created itself:</li>
+</ul>
+<div class="incremental">
+<pre><code>all: output/content.pdf output/content.slides.html</code></pre>
+</div>
+<h2 id="variables">Variables</h2>
+<ul>
+<li>define re-occuring parts at single location</li>
+</ul>
+<div class="incremental">
+<p><span class="math inline">⇒</span> use variables</p>
+<pre><code>
+OUTDIR = output
+
+$(OUTDIR)/content.slides.html: src/content.md Makefile refs.bib
+pandoc --template=pandoc_custom/templates/revealjs.template \
+-s -V revealjs-url=../reveal.js -t revealjs -f markdown \
+--filter pandoc-citeproc --csl=pandoc_custom/csl/elsevier-harvard.csl \
+--bibliography=refs.bib \
+-o $@ $&lt;</code></pre>
+</div>
+<h2 id="pattern-rules"><a href="http://www.gnu.org/software/make/manual/html_node/Pattern-Rules.html#Pattern-Rules">Pattern rules</a></h2>
+<ul>
+<li>applying identical rules to multiple targets</li>
+</ul>
+<div class="incremental">
+<pre><code>$(OUTDIR)/*.slides.html: src/*.md Makefile refs.bib
+pandoc --template=pandoc_custom/templates/revealjs.template \
+-s -V revealjs-url=../reveal.js -t revealjs -f markdown \
+--filter pandoc-citeproc --csl=pandoc_custom/csl/elsevier-harvard.csl \
+--bibliography=refs.bib \
+-o $@ $&lt;</code></pre>
+</div>
+<h2 id="resources-1">Resources</h2>
+<ul>
+<li>Make lessons at <a href="http://software-carpentry.org/v4/make/index.html">Software Carpentry</a></li>
+</ul>
+<h1 id="references">References</h1>
+<h2 id="section-29"></h2>
+<h3 id="cited-in-pandoc-chapter">Cited in pandoc chapter:</h3>
+</article>
+</body>
+</html>

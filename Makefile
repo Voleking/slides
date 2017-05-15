@@ -11,7 +11,7 @@ PDFS = $(patsubst %.$(MEXT), ${OBJDIR}/%.pdf, $(notdir ${SRCS}))
 HTML = $(patsubst %.$(MEXT), ${OBJDIR}/%.html, $(notdir ${SRCS}))
 REVEAL = $(patsubst %.$(MEXT), ${OBJDIR}/%.slides.html, $(notdir ${SRCS}))
 
-all:	$(REVEAL)
+all:	$(REVEAL) $(HTML)
 
 debug:
 
@@ -23,10 +23,17 @@ show:
 
 $(OBJDIR)/%.slides.html:	$(SRCDIR)/%.md
 	pandoc -t revealjs -f markdown \
-	--template=pandoc_custom/templates/custom \
+	--template=custom \
 	--include-in-header=pandoc_custom/css/revealjs.css \
 	-V slideNumber=true \
 	-V revealjs-url=../reveal.js \
+	-o $@ $<
+
+$(OBJDIR)/%.html:	$(SRCDIR)/%.md
+	pandoc -t html5 -f markdown \
+	--template github \
+	--css=stylesheets/github.css \
+	-s -S \
 	-o $@ $<
 
 clean:
