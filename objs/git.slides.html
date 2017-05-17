@@ -73,28 +73,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   /* all headers are transformed to h1 by reveal.js, */
   /* even individual slide headers. */
   /* hence, h1 font size should not be too large */
-  .reveal h1 { 
+  .reveal h1 {
       font-style: normal;
       font-size: 1.5em;
       font-weight: bold;
   }
   
-  .reveal h2 { 
+  .reveal h2 {
       font-style: normal;
       font-size: 1.2em;
       font-weight: bold;
   }
   
-  .reveal h2 { 
+  .reveal h2 {
       font-style: normal;
       font-size: 1.1em;
       font-weight: bold;
   }
   
-  .reveal h3 { 
+  .reveal h3 {
       font-style: normal;
       font-size: 1.0em;
       font-weight: bold;
+  }
+  
+  pre code {
+    display: block; padding: 0.5em;
+    background: #3F3F3F;
+    color: #DCDCDC;
   }
   
   </style>
@@ -713,6 +719,8 @@ git stash apply</code></pre></li>
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
 
         // Optional reveal.js plugins
         dependencies: [

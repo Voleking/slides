@@ -25,7 +25,7 @@ $(OBJDIR)/%.slides.html:	$(SRCDIR)/%.md
 	pandoc -t revealjs -f markdown \
 	--template=custom \
 	--include-in-header=pandoc_custom/css/revealjs.css \
-	-V slideNumber=true \
+	-V slideNumber=true -V margin=0.1 \
 	-V revealjs-url=../reveal.js \
 	-o $@ $<
 
